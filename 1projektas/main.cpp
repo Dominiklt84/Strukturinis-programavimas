@@ -63,10 +63,10 @@ int main()
     cout<<" "<<endl;
 
     //6uzd
-    int x=33, p=66,y;
+    float p=53,x;
 
-    y=p-x;
-    cout<<x<<" + "<<y<<" = "<<p<<endl;
+    x=p/2;
+    cout<<x<<" + "<<x<<" = "<<p<<endl;
     return 0;
 }
 
