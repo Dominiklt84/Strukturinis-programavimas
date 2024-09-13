@@ -29,7 +29,9 @@ int main()
     //3uzd
 
     string marke="Audi", modelis="c6",spalva="pilka";
-    int metais=2007,litrazas=3;
+    int metais=2007;
+    float litrazas= 3.0;
+
 
     return 0;
 }
