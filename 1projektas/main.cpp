@@ -48,9 +48,18 @@ int main()
     cout<<" "<<endl;
 
     //5uzd
-    int g=5,h=77,i=9,j=22,k=13;
-
-    cout<<(g+h+c+i+j)/5<<endl;
+    int g,h,i,j,k;
+    cout<<" Pirmas skaicius: ";
+    cin>>g;
+    cout<<" Antras skaicius: ";
+    cin>>h;
+    cout<<" Trecias skaicius: ";
+    cin>>i;
+    cout<<" Ketvirtas skaicius: ";
+    cin>>j;
+    cout<<" Penktas skaicius: ";
+    cin>>k;
+    cout<<"Vidurkis: "<<(g+h+c+i+j)/5<<endl;
     cout<<" "<<endl;
 
     //6uzd
