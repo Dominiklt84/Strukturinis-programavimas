@@ -1,0 +1,3 @@
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/Pirmoji praktine uzduotis/cmake-build-debug/CMakeFiles/Pirmoji_praktine_uzduotis.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/Pirmoji praktine uzduotis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/Pirmoji praktine uzduotis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
