@@ -15,61 +15,61 @@ int main() {
         cin>>kiek;
         switch (num) {
             case 1:
-                if(val=="EUR") {
+                if(val=="EUR" || val=="eur") {
                     cout<<"Pasirinkite su kokia valiuta norite palyginti (GBP,USD,INR): "<<endl;
                     cin>>kok;
-                    if(kok=="GBP") {
+                    if(kok=="GBP" || val=="gbp") {
                         cout<<"GBP: "<<round((kiek*0.8593)*100)/1000<<endl;
-                    } else if(kok=="USD") {
+                    } else if(kok=="USD" || val=="usd") {
                         cout<<"USD: "<<round((kiek*1.0713)*100)/1000<<endl;
-                    } else if(kok=="INR") {
+                    } else if(kok=="INR" || val=="inr") {
                         cout<<"INR: "<<round((kiek*88.8260)*100)/1000<<endl;
                     }
-                }else if(val=="GBP") {
+                }else if(val=="GBP" || val=="gbp") {
                     cout<<"EUR: "<<round((kiek/0.8593)*100)/1000<<endl;
-                } else if(val=="USD") {
+                } else if(val=="USD" || val=="usd") {
                     cout<<"EUR: "<<round((kiek/1.0713)*100)/1000<<endl;
-                } else if(val=="INR") {
+                } else if(val=="INR" || val=="inr") {
                     cout<<"EUR: "<<round((kiek/88.8260)*100)/1000<<endl;
-                }
+                } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 2:
-                if(val=="EUR") {
+                if(val=="EUR" || val=="eur") {
                     cout<<"Pasirinkite kokia valiuta norite pirkti (GBP,USD,INR): "<<endl;
                     cin>>kok;
-                    if(kok=="GBP") {
-                        cout<<"GBP: "<<kiek*0.8450<<endl;
-                    } else if(kok=="USD") {
-                        cout<<"USD: "<<kiek*1.0547<<endl;
-                    } else if(kok=="INR") {
-                        cout<<"INR: "<<85.2614<<endl;
-                    }
-                } else if(val=="GBP") {
-                    cout<<"EUR: "<<kiek/0.8450<<endl;
-                } else if(val=="USD") {
-                    cout<<"EUR: "<<kiek/1.0547<<endl;
-                } else if(val=="INR") {
-                    cout<<"EUR: "<<kiek/85.2614<<endl;
-                }
+                    if(kok=="GBP" || val=="gbp") {
+                        cout<<"GBP: "<<round((kiek*0.8450)*100)/1000<<endl;
+                    } else if(kok=="USD" || val=="usd") {
+                        cout<<"USD: "<<round((kiek*1.0547)*100)/1000<<endl;
+                    } else if(kok=="INR" || val=="inr") {
+                        cout<<"INR: "<<round((kiek*85.2614)*100)/1000<<endl;
+                    } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
+                } else if(val=="GBP"|| val=="gbp") {
+                    cout<<"EUR: "<<round((kiek/0.8450)*100)/1000<<endl;
+                } else if(val=="USD"|| val=="usd") {
+                    cout<<"EUR: "<<round((kiek/1.0547)*100)/1000<<endl;
+                } else if(val=="INR" || val=="inr") {
+                    cout<<"EUR: "<<round((kiek/85.2614)*100)/1000<<endl;
+                } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 3:
-                if(val=="EUR") {
+                if(val=="EUR" ||val=="eur") {
                     cout<<"Pasirinkite kokia valiuta norite parduoti (GBP,USD,INR): "<<endl;
                     cin>>kok;
-                    if(kok=="GBP") {
-                        cout<<"GBP: "<<kiek*0.9060<<endl;
-                    } else if(kok=="USD") {
-                        cout<<"USD: "<<kiek*1.1309<<endl;
-                    } else if(kok=="INR") {
-                        cout<<"INR: "<<92.8334<<endl;
-                    }
-                } else if(val=="GBP") {
-                    cout<<"EUR: "<<kiek/0.9060<<endl;
-                } else if(val=="USD") {
-                    cout<<"EUR: "<<kiek/1.1309<<endl;
-                } else if(val=="INR") {
-                    cout<<"EUR: "<<kiek/92.8334<<endl;
-                }
+                    if(kok=="GBP" ||val=="gbp") {
+                        cout<<"GBP: "<<round((kiek*0.9060)*100)/1000<<endl;
+                    } else if(kok=="USD"|| val=="usd") {
+                        cout<<"USD: "<<round((kiek*1.1309)*100)/1000<<endl;
+                    } else if(kok=="INR"|| val=="inr") {
+                        cout<<"INR: "<<round((kiek*92.8334)*100)/1000<<endl;
+                    } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
+                } else if(val=="GBP"||val=="gbp") {
+                    cout<<"EUR: "<<round((kiek/0.9060)*100)/1000<<endl;
+                } else if(val=="USD"|| val=="usd") {
+                    cout<<"EUR: "<<round((kiek/1.1309)*100)/1000<<endl;
+                } else if(val=="INR" || val=="inr") {
+                    cout<<"EUR: "<<round((kiek/92.8334)*100)/1000<<endl;
+                } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             default:
                 cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
