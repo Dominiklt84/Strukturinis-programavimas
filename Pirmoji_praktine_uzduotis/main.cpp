@@ -24,7 +24,7 @@ int main() {
                         cout<<"USD: "<<round((kiek*1.0713)*100)/1000<<endl;
                     } else if(kok=="INR" || val=="inr") {
                         cout<<"INR: "<<round((kiek*88.8260)*100)/1000<<endl;
-                    }
+                    } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
                 }else if(val=="GBP" || val=="gbp") {
                     cout<<"EUR: "<<round((kiek/0.8593)*100)/1000<<endl;
                 } else if(val=="USD" || val=="usd") {
