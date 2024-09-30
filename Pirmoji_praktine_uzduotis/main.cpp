@@ -4,17 +4,18 @@ int main() {
     int kiek,num=0;
     string val,kok;
     while(num!=4) {
-        cout<<"Pasirinkite veiksma: "<<endl;
+        cout <<"Pasirinkite veiksma: "<<endl;
         cout << "1. Valiutos kurso palyginimas. " << endl;
         cout << "2. Isigyti valiuta. " << endl;
         cout << "3. Parduoti valiuta. " << endl;
+        cout << "4. Iseiti"<< endl;
         cin>>num;
-        cout<<"Iveskite valiuta (EUR,GBP,USD,INR): "<<endl;
-        cin>>val;
-        cout<<"Iveskite kieki:"<<endl;
-        cin>>kiek;
         switch (num) {
             case 1:
+                cout<<"Iveskite jusu valiuta (EUR,GBP,USD,INR): "<<endl;
+                cin>>val;
+                cout<<"Iveskite kieki:"<<endl;
+                cin>>kiek;
                 if(val=="EUR" || val=="eur") {
                     cout<<"Pasirinkite su kokia valiuta norite palyginti (GBP,USD,INR): "<<endl;
                     cin>>kok;
@@ -34,6 +35,10 @@ int main() {
                 } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 2:
+                cout<<"Iveskite jusu valiuta (EUR,GBP,USD,INR): "<<endl;
+                cin>>val;
+                cout<<"Iveskite kieki:"<<endl;
+                cin>>kiek;
                 if(val=="EUR" || val=="eur") {
                     cout<<"Pasirinkite kokia valiuta norite pirkti (GBP,USD,INR): "<<endl;
                     cin>>kok;
@@ -53,6 +58,10 @@ int main() {
                 } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 3:
+                cout<<"Iveskite jusu valiuta (EUR,GBP,USD,INR): "<<endl;
+                cin>>val;
+                cout<<"Iveskite kieki:"<<endl;
+                cin>>kiek;
                 if(val=="EUR" ||val=="eur") {
                     cout<<"Pasirinkite kokia valiuta norite parduoti (GBP,USD,INR): "<<endl;
                     cin>>kok;
@@ -70,6 +79,9 @@ int main() {
                 } else if(val=="INR" || val=="inr") {
                     cout<<"EUR: "<<round((kiek/85.2614)*100)/100<<endl;
                 } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
+            break;
+            case 4:
+                cout<<"Jus isejote is programos"<<endl;
             break;
             default:
                 cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
