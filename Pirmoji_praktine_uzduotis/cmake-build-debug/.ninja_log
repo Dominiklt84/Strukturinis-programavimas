@@ -1,15 +1,5 @@
 # ninja log v6
-20	4123	7493100964364434	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-4128	4351	7493101005544322	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-8	2289	7493103265980664	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-2289	2402	7493103288793266	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-11	2269	7493107648536708	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-2269	2382	7493107671115131	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-9	2218	7493109748306815	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-2218	2334	7493109770393434	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-50	3873	7494097070120880	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-3874	4095	7494097108345639	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-23	2282	7494097810754472	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-2283	2382	7494097833344864	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
-10	2227	7494098552424482	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	3fdd0e262b0800ea
-2228	2326	7494098574611114	Pirmoji_praktine_uzduotis.exe	512b3966fedb07a7
+6	5019	7496438320156539	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	5cdd01d7ce1e8625
+5027	5223	7496438370370735	Pirmoji_praktine_uzduotis.exe	a94929120e4ff061
+13	5176	7496441092032172	CMakeFiles/Pirmoji_praktine_uzduotis.dir/main.cpp.obj	5cdd01d7ce1e8625
+5177	5373	7496441143675866	Pirmoji_praktine_uzduotis.exe	a94929120e4ff061

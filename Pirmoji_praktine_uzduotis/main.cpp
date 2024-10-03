@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    int kiek,num=0;
+    int num=0;
+    float kiek;
     string val,kok;
     while(num!=4) {
         cout <<"Pasirinkite veiksma: "<<endl;
