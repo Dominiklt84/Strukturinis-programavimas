@@ -51,11 +51,11 @@ int main() {
                         cout<<"INR: "<<round((kiek*85.2614)*100)/100<<endl;
                     } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
                 } else if(val=="GBP"|| val=="gbp") {
-                    cout<<"EUR: "<<round((kiek/0.9060)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/0.8450)*100)/100<<endl;
                 } else if(val=="USD"|| val=="usd") {
-                    cout<<"EUR: "<<round((kiek/1.1309)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/1.0547)*100)/100<<endl;
                 } else if(val=="INR" || val=="inr") {
-                    cout<<"EUR: "<<round((kiek/92.8334)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/85.2614)*100)/100<<endl;
                 } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 3:
@@ -74,11 +74,11 @@ int main() {
                         cout<<"INR: "<<round((kiek*92.8334)*100)/100<<endl;
                     } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
                 } else if(val=="GBP"||val=="gbp") {
-                    cout<<"EUR: "<<round((kiek/0.8450)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/0.9060)*100)/100<<endl;
                 } else if(val=="USD"|| val=="usd") {
-                    cout<<"EUR: "<<round((kiek/1.0547)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/1.1309)*100)/100<<endl;
                 } else if(val=="INR" || val=="inr") {
-                    cout<<"EUR: "<<round((kiek/85.2614)*100)/100<<endl;
+                    cout<<"EUR: "<<round((kiek/92.8334)*100)/100<<endl;
                 } else cout<<"Tokio pasirinkimo nera, bandykite dar karta"<<endl;
             break;
             case 4:
