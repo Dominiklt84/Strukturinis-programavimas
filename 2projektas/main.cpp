@@ -3,10 +3,10 @@
 using namespace std;
 
 bool Balse(char raide);
-
+int bendaliklis(int skaicius1,int skaicius2,int daliklis);
 int main()
 {
-    int num=0;
+    int num=0,skaicius1,skaicius2,daliklis;
     char raide;
     while(num!=5) {
         cout <<"Pasirinkite veiksma: "<<endl;
@@ -24,6 +24,8 @@ int main()
                     cout<<"Tai nera balse."<<endl;
             }
             break;
+            case 2:
+                bendaliklis(skaicius1,skaicius2);
 
         }
     }
@@ -39,4 +41,18 @@ bool Balse(char raide) {
         }
     }
     return false;
+}
+int bendaliklis(int skaicius1,int skaicius2,int daliklis) {
+    cout<<"Iveskite pirma skaitmuo: "<<endl;
+    cin>>skaicius1;
+    cout<<"Iveskite antra skaitmuo: "<<endl;
+    cin>>skaicius2;
+    if(skaicius1>skaicius2) {
+        daliklis=skaicius1-skaicius2;
+    }else {
+        daliklis= skaicius2-skaicius1;
+    }
+ 
+
+
 }
