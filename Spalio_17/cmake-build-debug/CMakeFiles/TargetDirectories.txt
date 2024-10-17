@@ -1,0 +1,3 @@
+C:/Users/s057152/Documents/Strukturinis-programavimas/Spalio_17/cmake-build-debug/CMakeFiles/Spalio_17.dir
+C:/Users/s057152/Documents/Strukturinis-programavimas/Spalio_17/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s057152/Documents/Strukturinis-programavimas/Spalio_17/cmake-build-debug/CMakeFiles/rebuild_cache.dir
