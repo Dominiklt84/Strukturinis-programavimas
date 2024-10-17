@@ -6,7 +6,7 @@ int bendaliklis(int skaicius1,int skaicius2);
 
 int main()
 {
-    int num=0,skaicius1,skaicius2;
+    int num=0,skaicius1,skaicius2,iv_num=0;
     char raide;
     while(num!=5) {
         cout <<"Pasirinkite veiksma: "<<endl;
@@ -31,6 +31,10 @@ int main()
                 cin>>skaicius2;
                 cout << "Didziausias bendras daliklis: " << bendaliklis(skaicius1, skaicius2) << endl;
             break;
+            case 3:
+
+                break;
+
 
         }
     }
@@ -55,4 +59,17 @@ int bendaliklis(int skaicius1,int skaicius2) {
             skaicius2=daliklis;
     }
     return skaicius1;
+}
+void Game(int &iv_num) {
+    int rand_num=rand()%100+1;
+    while(rand_num==iv_num) {
+        cout<<"Iveskite skaiciu: "<<endl;
+        cin>>iv_num;
+        if(iv_num>rand_num) {
+            cout<<"Jusu skacius didesnis"<<endl;
+        } else if(iv_num<rand_num) {
+            cout<<"Jusu skacius mazesnis"<<endl;
+        }
+    }
+
 }
