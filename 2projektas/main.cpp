@@ -69,9 +69,12 @@ int bendaliklis(int skaicius1,int skaicius2) {
     }
     return skaicius1;
 }
+int Random(){
+    return rand() % 100 + 1;
+}
 //funkcija, kuri generuoja skaičių nuo 1 iki 100 ir tada patikrina, ar žmogus atspėjo skaičių
 void Game(int iv_num) {
-    int rand_num=rand() % 100 + 1;
+    int rand_num=Random();
     cout<<"Zaidimas: Bandykite atspeti skaiciu nuo 1 iki 100."<<endl;
     while(rand_num!=iv_num) {
         cout<<"Iveskite skaiciu: "<<endl;
