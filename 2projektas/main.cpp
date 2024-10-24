@@ -70,6 +70,7 @@ int bendaliklis(int skaicius1,int skaicius2) {
     return skaicius1;
 }
 int Random(){
+    srand(time(0));
     return rand() % 100 + 1;
 }
 //funkcija, kuri generuoja skaičių nuo 1 iki 100 ir tada patikrina, ar žmogus atspėjo skaičių
