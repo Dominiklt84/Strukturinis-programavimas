@@ -1,3 +1,3 @@
-C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/2projektas.dir
-C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/s057152/Documents/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/2projektas.dir
+C:/Users/s057152/Documents/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s057152/Documents/Strukturinis-programavimas/2projektas/cmake-build-debug/CMakeFiles/rebuild_cache.dir

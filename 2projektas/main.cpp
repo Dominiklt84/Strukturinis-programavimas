@@ -12,7 +12,7 @@ int main()
     while(num!=5) {
         cout <<"Pasirinkite veiksma: "<<endl;
         cout << "1. Patikrinimas ar raide yra balse. " << endl;
-        cout << "2. Rasti maziausia bendra dalikli tarp dvieju ivestu skaitmenu. " << endl;
+        cout << "2. Rasti didziausia bendra dalikli tarp dvieju ivestu skaitmenu. " << endl;
         cout << "3. Mini zaidimas. " << endl;
         cout << "4. Skaiciu tvarka. " << endl;
         cout << "5. Iseiti. "<<endl;
@@ -36,7 +36,7 @@ int main()
                 Game(iv_num);
             break;
             case 4:
-                cout<<"Iveskite teigiama sveikaji skaičiu: "<<endl;
+                cout<<"Iveskite teigiama sveikaji skaiciu: "<<endl;
             cin>>n;
             fizzbuzz(n);
             break;
