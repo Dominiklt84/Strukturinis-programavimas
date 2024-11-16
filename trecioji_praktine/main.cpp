@@ -4,11 +4,12 @@ using namespace std;
 const char ABC[26]={'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 void Sifravimas();
 void Desifravimas();
+void Sifravimas_ASCII();
 int main() {
     int num=0,nr=0;
 
     while(num!=3) {
-        cout<<"S ifravimo/deSifravimo sistema. "<<endl;
+        cout<<" Sifravimo/desifravimo sistema. "<<endl;
         cout <<"Pasirinkite veiksma: "<<endl;
         cout << "1. Pirmas pasirinkimas (naudojant abecele). " << endl;
         cout << "2. Antras pasirinkimas (naudojant ASCII koduote). " << endl;
@@ -27,14 +28,20 @@ int main() {
             }
             break;
             case 2:
+                cout<<"Pasirinkite veiksma: "<<endl;
+            cout<<"1. Sifruoti "<<endl;
+            cout<<"2. Desifruoti "<<endl;
+            cin>>nr;
+            if(nr==1) {
+                Sifravimas_ASCII();
+            }else if(nr==2) {
+                Desifravimas();
+            }
 
                 break;
 
         }
     }
-
-    Sifravimas();
-
 
     return 0;
 }
@@ -69,7 +76,7 @@ void Sifravimas() {
                 word[i]=ABC[word_code[i]];
     }
     word[strlen(text)] = '\0';
-    cout<<"Jusu kodas:"<<word<<endl;
+    cout<<"Uzsifruotas tekstas:"<<word<<endl;
 }
 void Desifravimas() {
     char text[100],key[100],word[100],key_sifr[100];
@@ -97,6 +104,36 @@ void Desifravimas() {
     for(int i=0;i<strlen(text);i++) {
         word[i]=ABC[word_code[i]];
     }
-    word[strlen(text)] = '\0';
-    cout<<"Jusu kodas:"<<word<<endl;
+    word[strlen(text)]='\0';
+    cout<<"Desifruotas tekstas: "<<word<<endl;
+}
+void Sifravimas_ASCII() {
+    char text[100],key[100],word[100],key_sifr[100];
+    cout<<"Iveskite pradini teksta: "<<endl;
+    cin>>text;
+    cout<<"Iveskite slapta rakta: "<<endl;
+    cin>>key;
+    for(int i=0;i<strlen(text);i++) {
+        key_sifr[i]=key[i%strlen(key)];
+    }
+    for(int i=0;i<strlen(text);i++) {
+        word[i]=(text[i]+key_sifr[i]-32)%95+32;
+    }
+    word[strlen(text)]='\0';
+    cout<<"Uzsifruotas tekstas: "<<word<<endl;
+}
+void Desifravimas_ASCII() {
+    char text[100],key[100],word[100],key_sifr[100];
+    cout<<"Iveskite pradini teksta: "<<endl;
+    cin>>text;
+    cout<<"Iveskite slapta rakta: "<<endl;
+    cin>>key;
+    for(int i=0;i<strlen(text);i++) {
+        key_sifr[i]=key[i%strlen(key)];
+    }
+    for(int i=0;i<strlen(text);i++) {
+        word[i]=(text[i]-key_sifr[i]-32+95)%95+32;
+    }
+    word[strlen(text)]='\0';
+    cout<<"Uzsifruotas tekstas: "<<word<<endl;
 }
