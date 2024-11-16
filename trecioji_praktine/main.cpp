@@ -5,11 +5,12 @@ const char ABC[26]={'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 
 void Sifravimas();
 void Desifravimas();
 void Sifravimas_ASCII();
+void Desifravimas_ASCII();
 int main() {
     int num=0,nr=0;
 
     while(num!=3) {
-        cout<<" Sifravimo/desifravimo sistema. "<<endl;
+        cout<<"Sifravimo/desifravimo sistema. "<<endl;
         cout <<"Pasirinkite veiksma: "<<endl;
         cout << "1. Pirmas pasirinkimas (naudojant abecele). " << endl;
         cout << "2. Antras pasirinkimas (naudojant ASCII koduote). " << endl;
@@ -25,6 +26,8 @@ int main() {
                 Sifravimas();
             }else if(nr==2) {
                 Desifravimas();
+            }else {
+                cout<<"Tokio pasirinkimo nera, bandykite dar karta."<<endl;
             }
             break;
             case 2:
@@ -35,11 +38,16 @@ int main() {
             if(nr==1) {
                 Sifravimas_ASCII();
             }else if(nr==2) {
-                Desifravimas();
+                Desifravimas_ASCII();
+            }else {
+                cout<<"Tokio pasirinkimo nera, bandykite dar karta."<<endl;
             }
-
-                break;
-
+            break;
+            case 3:
+                cout<<"Jus isejote is programos"<<endl;
+            break;
+            default:
+                cout<<"Tokio pasirinkimo nera, bandykite dar karta."<<endl;
         }
     }
 
@@ -135,5 +143,5 @@ void Desifravimas_ASCII() {
         word[i]=(text[i]-key_sifr[i]-32+95)%95+32;
     }
     word[strlen(text)]='\0';
-    cout<<"Uzsifruotas tekstas: "<<word<<endl;
+    cout<<"Desifruotas tekstas: "<<word<<endl;
 }
