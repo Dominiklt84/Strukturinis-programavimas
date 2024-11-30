@@ -1,16 +1,14 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-<<<<<<< HEAD
 
 void Firstprog();
-=======
 const char ABC[26]={'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 void Sifravimas();
 void Desifravimas();
 void Sifravimas_ASCII();
 void Desifravimas_ASCII();
->>>>>>> df055d864701da6f2edc10a973493e254fac6ccf
+
 int main() {
     int num=0,nr=0;
 
@@ -54,8 +52,8 @@ int main() {
             default:
                 cout<<"Tokio pasirinkimo nera, bandykite dar karta."<<endl;
         }
-<<<<<<< HEAD
-    }*/
+
+    }
 
     Firstprog();
 
@@ -65,7 +63,7 @@ int main() {
 void Firstprog() {
     const char ABC[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
     char text[50],key[50],word[50],new_key[50];
-=======
+
     }
 
     return 0;
@@ -73,13 +71,13 @@ void Firstprog() {
 void Sifravimas() {
     char text[100],key[100],word[100],key_sifr[100];
     int text_code[100],key_code[100],word_code[100];
->>>>>>> df055d864701da6f2edc10a973493e254fac6ccf
+
     cout<<"Iveskite pradini teksta: "<<endl;
     cin>>text;
     cout<<"Iveskite slapta rakta: "<<endl;
     cin>>key;
     for(int i=0;i<strlen(text);i++) {
-<<<<<<< HEAD
+
         new_key[i]=key[i%strlen(key)];
     }
     int size_text=strlen(text),size_key=strlen(new_key);
@@ -114,7 +112,6 @@ void Sifravimas() {
     cout<<word;
 
 
-=======
         key_sifr[i]=key[i%strlen(key)];
     }
     for(int i=0;i<strlen(text);i++) {
@@ -198,5 +195,5 @@ void Desifravimas_ASCII() {
     }
     word[strlen(text)]='\0';
     cout<<"Desifruotas tekstas: "<<word<<endl;
->>>>>>> df055d864701da6f2edc10a973493e254fac6ccf
+
 }
