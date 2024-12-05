@@ -1,0 +1,3 @@
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/aristokratinis kodas/cmake-build-debug/CMakeFiles/aristokratinis_kodas.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/aristokratinis kodas/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/aristokratinis kodas/cmake-build-debug/CMakeFiles/rebuild_cache.dir
