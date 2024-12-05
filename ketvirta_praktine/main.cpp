@@ -71,7 +71,7 @@ int main() {
         cin >> quantity;
 
         if (quantity <= 0) {
-            cout << "Kiekis turi byti teigiamas skaicius. Bandykite dar karta."<<endl;
+            cout << "Kiekis turi buti teigiamas skaicius. Bandykite dar karta."<<endl;
             continue;
         }
 
