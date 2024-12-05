@@ -23,77 +23,61 @@ void showMenu(int menuSize,menuItemType menuList[]) {
         cout<<i+1<<". "<<menuList[i].menuItem<<" "<<fixed<<setprecision(2)<<menuList[i].menuPrice<<" EUR"<<endl;
     }
 }
-void printCheck(int menuSize, menuItemType menuList[]) {
-    int orderNumbers[100], orderQuantities[100], orderCount = 0;
+void printCheck(int menuSize, menuItemType menuList[], int quantities[]) {
+    double subtotal = 0.0, taxRate = 0.21;
 
+    cout << left << setw(45)  << "Saskaita:" << endl;
+    ofstream Fileout("saskaita.txt");
+    Fileout << left << setw(45)  << "Saskaita:" << endl;
+
+    for (int i = 0; i < menuSize; i++) {
+        if (quantities[i] > 0) {
+            double itemTotal = quantities[i] * menuList[i].menuPrice;
+            subtotal = subtotal + itemTotal;
+
+            cout << left << setw(45)  << (to_string(quantities[i]) + " x " + menuList[i].menuItem) << right << setw(8) << fixed << setprecision(2) << itemTotal << " EUR" << endl;
+            Fileout << left << setw(45)  << (to_string(quantities[i]) + " x " + menuList[i].menuItem) << right << setw(8) << fixed << setprecision(2) << itemTotal << " EUR" << endl;
+        }
+    }
+
+    double tax = subtotal * taxRate;
+    double total = subtotal + tax;
+
+    cout << left << setw(45) << "Mokesciai"<< right << setw(8) << fixed << setprecision(2) << tax << " EUR" << endl;
+    cout << left << setw(45)  << "Galutine suma"<< right << setw(8) << fixed << setprecision(2) << total << " EUR" << endl;
+
+    Fileout << left << setw(45)  << "Mokesciai"<< right << setw(8) << fixed << setprecision(2) << tax << " EUR" << endl;
+    Fileout << left << setw(45)  << "Galutine suma"<< right << setw(8) << fixed << setprecision(2) << total << " EUR" << endl;
+
+    Fileout.close();
+}
+int main() {
+    menuItemType menuList[8];
+    int menuSize,choice,quantity,quantities[8] = {0};;
+    getData(menuList,menuSize);
     while (true) {
-        cout << "Pasirinkite patiekalus (numeriai nuo 1 iki " << menuSize << "). Jei baigete, iveskite 0." << endl;
-        showMenu(menuSize, menuList);
-        int choice;
-        cout << "Pasirinkite patiekala: "<<endl;
+        showMenu(menuSize,menuList);
+        cout << "Iveskite patiekalo numeri (arba 0, jei baigete): ";
         cin >> choice;
 
         if (choice == 0) break;
 
-        if (choice >= 1 && choice <= menuSize) {
-            int quantity;
-            cout << "Kiek norite porciju? "<<endl;
-            cin >> quantity;
-
-            bool found = false;
-            for (int i = 0; i < orderCount; i++) {
-                if (orderNumbers[i] == choice) {
-                    orderQuantities[i] += quantity;
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                orderNumbers[orderCount] = choice;
-                orderQuantities[orderCount] = quantity;
-                orderCount++;
-            }
-        } else {
-            cout << "Neteisingas pasirinkimas. Bandykite dar karta." << endl;
+        if (choice < 1 || choice > menuSize) {
+            cout << "Netinkamas pasirinkimas. Bandykite dar karta."<<endl;
+            continue;
         }
+
+        cout << "Iveskite kieki: "<<endl;
+        cin >> quantity;
+
+        if (quantity <= 0) {
+            cout << "Kiekis turi byti teigiamas skaicius. Bandykite dar karta."<<endl;
+            continue;
+        }
+
+        quantities[choice - 1] = quantities[choice - 1] + quantity;
     }
 
-    double total = 0;
-    cout << "Jusu uzsakymas:" << endl;
-    for (int i = 0; i < orderCount; i++) {
-        int itemNumber = orderNumbers[i] - 1;
-        int quantity = orderQuantities[i];
-        double price = menuList[itemNumber].menuPrice;
-        double cost = price * quantity;
-        cout << quantity << " " << menuList[itemNumber].menuItem << " " << fixed << setprecision(2) << cost << " EUR" << endl;
-        total += cost;
-    }
-
-    double taxes = total * 0.21;
-    double finalTotal = total + taxes;
-
-    cout << "Mokesciai: " << fixed << setprecision(2) << taxes << " EUR" << endl;
-    cout << "Galutine suma: " << fixed << setprecision(2) << finalTotal << " EUR" << endl;
-
-    ofstream outFile("check.txt");
-    outFile << "Jusu uzsakymas:" << endl;
-    for (int i = 0; i < orderCount; i++) {
-        int itemNumber = orderNumbers[i] - 1;
-        int quantity = orderQuantities[i];
-        double price = menuList[itemNumber].menuPrice;
-        double cost = price * quantity;
-        outFile << quantity << " " << menuList[itemNumber].menuItem << " " << fixed << setprecision(2) << cost << " EUR\n";
-    }
-    outFile << "Mokesciai: " << fixed << setprecision(2) << taxes << " EUR" << endl;
-    outFile << "Galutine suma: " << fixed << setprecision(2) << finalTotal << " EUR" << endl;
-    outFile.close();
-}
-
-
-int main() {
-    menuItemType menuList[8];
-    int menuSize;
-    getData(menuList,menuSize);
-    printCheck(menuSize, menuList);
+    printCheck(menuSize, menuList, quantities);
     return 0;
 }
