@@ -1,0 +1,3 @@
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/penktoji_praktine/cmake-build-debug/CMakeFiles/penktoji_praktine.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/penktoji_praktine/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/dalen/OneDrive/Dokumenty/VIKO EIF/Strukturinis-programavimas/penktoji_praktine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
