@@ -22,7 +22,6 @@ void first_prog() {
         }
     }
 
-    // Atspausdinti lentelę
     cout << "Lentele:" << endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
@@ -31,7 +30,6 @@ void first_prog() {
         cout << endl;
     }
 
-    // Apskaičiuoti kiekvienos eilutės sumą
     cout << "Eiluciu sumos:" << endl;
     for (int i = 0; i < rows; i++) {
         int sum = 0;
@@ -41,7 +39,6 @@ void first_prog() {
         cout << "Eilute " << i + 1 << ": " << sum << endl;
     }
 
-    // Apskaičiuoti kiekvieno stulpelio sumą
     cout << "Stulpeliu sumos:" << endl;
     for (int j = 0; j < cols; j++) {
         int sum = 0;
@@ -51,7 +48,6 @@ void first_prog() {
         cout << "Stulpelis " << j + 1 << ": " << sum << endl;
     }
 
-    // Rasti didžiausią reikšmę lentelėje
     int max_val = table[0][0];
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
@@ -62,7 +58,6 @@ void first_prog() {
     }
     cout << "Didziausia reiksme lenteleje: " << max_val << endl;
 
-    // Atlaisvinti atmintį
     for (int i = 0; i < rows; i++) {
         delete[] table[i];
     }
@@ -78,7 +73,7 @@ struct Contact {
 };
 
 void second_prog() {
-    Contact contacts[100];
+    Contact** contacts = nullptr;
     int contact_count = 0;
 
     while (true) {
@@ -93,28 +88,32 @@ void second_prog() {
         cin >> choice;
 
         if (choice == 1) {
-            if (contact_count >= 100) {
-                cout << "Pasiektas maksimalus kontaktu skaicius." << endl;
-                continue;
-            }
-
-            Contact new_contact;
-            new_contact.id = contact_count + 1;
+            Contact* new_contact = new Contact;
+            new_contact->id = contact_count + 1;
 
             cout << "Iveskite varda: ";
             cin.ignore();
-            cin.getline(new_contact.name, 50);
+            cin.getline(new_contact->name, 50);
 
             cout << "Iveskite pavarde: ";
-            cin.getline(new_contact.surname, 50);
+            cin.getline(new_contact->surname, 50);
 
             cout << "Iveskite telefono numeri: ";
-            cin.getline(new_contact.phone, 20);
+            cin.getline(new_contact->phone, 20);
 
             cout << "Iveskite el. pasta: ";
-            cin.getline(new_contact.email, 50);
+            cin.getline(new_contact->email, 50);
 
-            contacts[contact_count++] = new_contact;
+            Contact** temp = new Contact*[contact_count + 1];
+            for (int i = 0; i < contact_count; i++) {
+                temp[i] = contacts[i];
+            }
+            temp[contact_count] = new_contact;
+
+            delete[] contacts;
+            contacts = temp;
+            contact_count++;
+
             cout << "Kontaktas pridetas sekmingai." << endl;
 
         } else if (choice == 2) {
@@ -123,10 +122,10 @@ void second_prog() {
             } else {
                 cout << "Visi kontaktai:" << endl;
                 for (int i = 0; i < contact_count; i++) {
-                    cout << "ID: " << contacts[i].id << ", Vardas: " << contacts[i].name
-                         << ", Pavarde: " << contacts[i].surname
-                         << ", Telefonas: " << contacts[i].phone
-                         << ", El. pastas: " << contacts[i].email << endl;
+                    cout << "ID: " << contacts[i]->id << ", Vardas: " << contacts[i]->name
+                         << ", Pavarde: " << contacts[i]->surname
+                         << ", Telefonas: " << contacts[i]->phone
+                         << ", El. pastas: " << contacts[i]->email << endl;
                 }
             }
 
@@ -137,19 +136,19 @@ void second_prog() {
 
             bool found = false;
             for (int i = 0; i < contact_count; i++) {
-                if (contacts[i].id == id) {
+                if (contacts[i]->id == id) {
                     cout << "Iveskite nauja varda: ";
                     cin.ignore();
-                    cin.getline(contacts[i].name, 50);
+                    cin.getline(contacts[i]->name, 50);
 
                     cout << "Iveskite nauja pavarde: ";
-                    cin.getline(contacts[i].surname, 50);
+                    cin.getline(contacts[i]->surname, 50);
 
                     cout << "Iveskite nauja telefono numeri: ";
-                    cin.getline(contacts[i].phone, 20);
+                    cin.getline(contacts[i]->phone, 20);
 
                     cout << "Iveskite nauja el. pasta: ";
-                    cin.getline(contacts[i].email, 50);
+                    cin.getline(contacts[i]->email, 50);
 
                     cout << "Kontaktas atnaujintas sekmingai." << endl;
                     found = true;
@@ -161,17 +160,27 @@ void second_prog() {
             }
 
         } else if (choice == 4) {
+            // Pašalinti kontaktą
             int id;
             cout << "Iveskite kontakto ID, kuri norite pasalinti: ";
             cin >> id;
 
             bool found = false;
             for (int i = 0; i < contact_count; i++) {
-                if (contacts[i].id == id) {
+                if (contacts[i]->id == id) {
+                    delete contacts[i];
                     for (int j = i; j < contact_count - 1; j++) {
                         contacts[j] = contacts[j + 1];
                     }
                     contact_count--;
+
+                    Contact** temp = new Contact*[contact_count];
+                    for (int k = 0; k < contact_count; k++) {
+                        temp[k] = contacts[k];
+                    }
+                    delete[] contacts;
+                    contacts = temp;
+
                     cout << "Kontaktas pasalintas sekmingai." << endl;
                     found = true;
                     break;
@@ -182,11 +191,18 @@ void second_prog() {
             }
 
         } else if (choice == 5) {
+            // Grįžti atgal
             break;
         } else {
             cout << "Neteisingas pasirinkimas. Bandykite dar karta." << endl;
         }
     }
+
+    // Išvalyti atmintį prieš išeinant
+    for (int i = 0; i < contact_count; i++) {
+        delete contacts[i];
+    }
+    delete[] contacts;
 }
 
 int main() {
